@@ -14,13 +14,14 @@
     <v-navigation-drawer v-model="sideNav">
       <v-list>
         <v-list-tile>
-          <v-list-tile-action>
+          <v-list-tile-action v-for="item in menuItems" :key="item.title">
             <v-toolbar-side-icon @click="sideNav=!sideNav">
-            <span class="mdi mdi-24px mdi-account-multiple"></span>
+            {{ item.icons }}
+            <span class="mdi mdi-48px mdi-account-multiple"></span>
             </v-toolbar-side-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            View Meetups
+            {{item.title}}
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -33,17 +34,24 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld
+    // HelloWorld
   },
 
   data: () => ({
-    sideNav: false
+    sideNav: false,
+    menuItems:[
+      {icons:<span class="mdi mdi-48px mdi-account-multiple"></span>,title:'VIEW MEETUPS'},
+      {icons:<span class="mdi mdi-map-marker"></span>,title:'ORGANIZE MEETUPS'},
+      {icons:<span class="mdi mdi-account"></span>,title:'PROFILE'},
+      {icons:<span class="mdi mdi-account-circle"></span>,title:'SIGN UP'},
+      {icons:<span class="mdi mdi-face"></span>,title:'SIGN IN'}
+    ]
   }),
 };
 </script>
