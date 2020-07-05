@@ -60,6 +60,6 @@
     background-color:rgba(0, 0,0, 0.5);
     color: fff;
     font-size: 15em;
-    margin-left: 41%;
+    margin-left: 45%;
 }
 </style>
