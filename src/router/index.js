@@ -26,12 +26,12 @@ Vue.use(VueRouter)
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/m',
+    path: '/meetups',
     name: 'Meetups',
     component: Meetups
   },
   {
-    path: '/meetups/new',
+    path: '/meetup/new',
     name: 'CreateMeetup',
     component: CreateMeetup
   },
@@ -53,8 +53,8 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  // mode: 'history',
-  // base: process.env.BASE_URL,  
+  mode: 'history',
+  base: process.env.BASE_URL,  
   routes
 })
 
