@@ -13,11 +13,12 @@
     </v-flex>
     <v-layout row wrap>
       <v-flex xs12>
-        <v-carousel>
+        <v-carousel style="cursor: pointer">
           <v-carousel-item
             v-for="meetup in meetups"
             :key="meetup.id"
             :src="meetup.imageUrl"
+            @click="onLoadMeetup(meetup.id)"
             reverse-transition="fade-transition"
             transition="fade-transition"
           >
@@ -46,6 +47,11 @@
         ]
       }
     },
+    methods: { 
+      onLoadMeetup(id){
+        this.$router.push('/meetups/'+id)
+       }
+      }
   }
 </script>
 

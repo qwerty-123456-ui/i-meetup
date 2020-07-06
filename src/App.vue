@@ -11,27 +11,27 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-xs-only">
-          <v-btn flat class="primary">
+          <v-btn text class="primary">
             <span class="mdi mdi-48px mdi-account-multiple"></span>
             <span class="space"></span>
             <router-link to="/meetups" tag="span" style="cursor: pointer">VIEW MEETUPS</router-link>
           </v-btn>
-          <v-btn flat class="primary">
+          <v-btn text class="primary">
             <span class="mdi mdi-48px mdi-map-marker"></span>
             <span class="space"></span>
             <router-link to="/meetup/new" tag="span" style="cursor: pointer">ORGANIZE MEETUPS</router-link>
           </v-btn>
-          <v-btn flat class="primary">
+          <v-btn text class="primary">
             <span class="mdi mdi-48px mdi-account"></span>
             <span class="space"></span>
             <router-link to="/profile" tag="span" style="cursor: pointer">PROFILE</router-link>
           </v-btn>
-          <v-btn flat class="primary">
+          <v-btn text class="primary">
             <span class="mdi mdi-48px mdi-account-circle"></span>
             <span class="space"></span>
             <router-link to="/signup" tag="span" style="cursor: pointer">SIGN UP</router-link>
           </v-btn>
-          <v-btn flat class="primary">
+          <v-btn text class="primary">
             <span class="mdi mdi-48px mdi-face"></span>
             <span class="space"></span>
             <router-link to="/signin" tag="span" style="cursor: pointer">SIGN IN</router-link>
