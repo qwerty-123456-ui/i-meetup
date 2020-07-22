@@ -11,7 +11,22 @@
     <v-flex>
         <p class="space"></p>
     </v-flex>
-    <v-layout row wrap>
+    <v-layout row>
+      <v-flex xs12 class="text-xs-center">
+        <v-progress-circular
+      :rotate="180"
+      :size="100"
+      :width="15"
+      :value="value"
+      color="pink"
+      indeterminate
+      v-if="loading"
+    >
+      {{ value }}
+    </v-progress-circular>
+      </v-flex>
+    </v-layout>
+    <v-layout row wrap v-if="!loading">
       <v-flex xs12>
         <v-carousel style="cursor: pointer">
           <v-carousel-item
@@ -39,13 +54,13 @@
 
 <script>
   export default {
-    data () {
-      return {
-        meetups: [
-            { imageUrl:'http://1.bp.blogspot.com/-HxaFxmB8kZg/T89-RJdUXGI/AAAAAAAADyo/bfD336mdNbQ/s1600/Manhattan+New+York+City+8.jpg',id:'wqasdfg6we0t67veq3wfy',title: 'Meetup in New York' },
-            { imageUrl:'https://africana.arizona.edu/sites/africana.arizona.edu/files/Eiffel-Tower-Paris-France.jpg',id:'we67yfcw0migectadb',title: 'Meetup in Paris' }      
-        ]
-      }
+    computed: {
+      meetups(){
+        return this.$store.getters.featuredMeetups
+      },
+      loading() {
+        return this.$store.getters.loading
+    }
     },
     methods: { 
       onLoadMeetup(id){
